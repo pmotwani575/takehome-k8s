@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejsapp
+  labels:
+    app: nodejsapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejsapp
+  template:
+    metadata:
+      labels:
+        app: nodejsapp
+    spec:
+      containers:
+      - name: node-server
+        image: pmotwani575/samplenodejs:node-server
+        ports:
+        - containerPort: 3000
