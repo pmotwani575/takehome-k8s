@@ -1,7 +1,5 @@
 # mycool-kube-deploy
-Kubernetes Test 
 
-# mycool-kube-deploy
 Kubernetes Test
 
 Thank you Team for the assignment and the opportunity . Raising PR for your review . Things to review
@@ -51,14 +49,14 @@ kubectl scale --replicas=20 deployment/php-apache , this will force cluster auto
 1) Covered above , created a local mysqlvol in KubeAPP directory and created a persistentvolume and persistentVolumeClaim
 2) Mounted in the sql deployment and created successfully . In this way we can mount the host volumes locally from EC2 etc to the containers
 
-### Liveness and Readiness Probe more frequently
+
 
 1) Introduced  Readiness and liveness probe in Frontend Php Apache just to make sure if application is working properly on the container port
 2) Also we can Introduced Probes for lot of different use cases and can discuss further like for example some legacy, we can add certain wait conditions before by readiness probe etc
 PS : Important thing is that must be configure properly and should not be a reason for application/container downtime somehow by misconfiguration
 See hpa/deployment.yaml for this
 
-### If Possible Ingres? 
+
 
 1)Since the application ( combination of frondend and backend) is only for demonstrating the different use cases of assignment and features of Kubernetes , I havent concentrated much on integrating both the php-apache and nodejs application and creating a ingress to make it publicly available . both these deployments are working locally
 2) However a sample alb-Ingress.yaml is created which can be used to add more backends , but for now havent configured ingress
